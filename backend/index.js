@@ -10,6 +10,7 @@ const authRouter = require('./routes/auth');
 const bookRouter = require('./routes/book');
 const borrowRouter = require('./routes/borrow');
 const saleRouter = require('./routes/sale');
+const userRouter = require('./routes/user');
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -23,6 +24,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/books', bookRouter);
 app.use('/api/borrows', borrowRouter);
 app.use('/api/sales', saleRouter);
+app.use('/api/users', userRouter);
 
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" });

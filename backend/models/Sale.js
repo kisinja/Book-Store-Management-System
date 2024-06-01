@@ -15,9 +15,12 @@ const saleSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    type: {
-        type: String,
-        enum: ["purchase", "borrow"],
+    price: {
+        type: Number,
+        required: true
+    },
+    quantity: {
+        type: Number,
         required: true
     }
 }, { timestamps: true });

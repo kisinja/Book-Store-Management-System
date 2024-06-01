@@ -2,7 +2,7 @@ const Borrow = require('../models/Borrow');
 
 const getBorrows = async (req, res) => {
     try {
-        const borrows = await Borrow.find();
+        const borrows = await Borrow.find({}).populate("book").populate("customer");
         if (!borrows) {
             res.status(404).json({ message: "No Borrows Available !!" });
         } else {

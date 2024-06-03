@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.details {
+    bottom: -30px;
+}
+
+.details:hover {
+    bottom: 0px;
+    opacity: 80;
+    position: absolute;
+}

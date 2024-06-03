@@ -1,6 +1,3 @@
-/* import jwt from 'jsonwebtoken';
-import asyncHandler from 'express-async-handler';
-import User from '../models/User.js'; */
 
 const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');

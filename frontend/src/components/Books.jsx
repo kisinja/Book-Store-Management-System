@@ -23,10 +23,10 @@ const Books = () => {
 
     return (
         <>
-            <div className="flex p-4 justify-between w-[90%] mx-auto">
+            <div className="flex p-4 justify-between w-[90%] mx-auto" id="books">
                 {books && books.map((book) => (
                     <Link key={book.id} to={`/books/${book._id}`}>
-                        <div className="bg-red-700 bg-opacity-75 px-6 py-2 shadow rounded w-[300px] ml-2 text-white flex flex-col justify-between relative">
+                        <div className="bg-red-700 bg-opacity-75 px-6 py-2 shadow rounded w-[300px] ml-2 text-white flex flex-col justify-between relative" id="book">
                             <h1 className="text-xl font-semibold italic underline text-center">{book.title}</h1>
                             <div className="w-full h-[200px]">
                                 <img src={book.image} alt={book.title} className="w-full h-full object-cover" />

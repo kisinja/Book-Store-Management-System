@@ -10,10 +10,8 @@
     bottom: -30px;
 }
 
-.details:hover {
-    bottom: 0px;
-    opacity: 80;
-    position: absolute;
+input{
+    color: black;
 }
 
 #title{

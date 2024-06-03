@@ -15,9 +15,15 @@ const Navbar = () => {
                 <Link to="/books" className='text-white hover:text-black hover:italic'>
                     Books
                 </Link>
+                <Link to="/register" className='text-white hover:text-black hover:italic'>
+                    Register
+                </Link>
+                <Link to="/login" className='text-white hover:text-black hover:italic'>
+                    Login
+                </Link>
             </div>
         </nav>
     )
 }
 
-export default Navbar
+export default Navbar;

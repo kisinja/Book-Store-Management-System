@@ -1,6 +1,8 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
+const {generateToken} = require('../utils/generateToken');
+
 const register = async (req, res) => {
 
     const { username, password, email } = req.body;
@@ -34,12 +36,8 @@ const login = async (req, res) => {
     try {
         const user = await User.findOne({ username });
         if (user && (await user.comparePassword(password))) {
-            const token = jwt.sign(
-                {
-                    id: user._id
-                }, process.env.JWT_SECRET, { expiresIn: '2d' }
-            );
-            res.json({ message: `Logged in as ' ${user.username} ' Use the token provided below to send requests :)`, "token": token }).status(200);
+            generateToken(res, user._id);
+            res.json({ message: "Login successful", "user": user }).status(200);
         } else {
             res.json({ message: "Invalid credentials" }).status(401);
         }

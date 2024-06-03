@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const cors = require('cors');
+const cookie = require('cookie-parser');
 
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
+app.use(cookie());
 
 app.use('/api/auth', authRouter);
 app.use('/api/books', bookRouter);
